@@ -4,12 +4,22 @@ import java.util.*;
 
 public class Main {
     public static void main(final String[] args) {
-        DataType dataType = DataType.WORD;
-        if (args.length == 2){
-            if(args[1].equals("long")) dataType = DataType.LONG;
-            if(args[1].equals("line")) dataType = DataType.LINE;
+        SortingTool sortingTool = new WordSortingTool();
+        if (args.length > 0 && Set.of(args).contains("-sortIntegers")){
+            sortingTool = new LongSortingTool();
+            sortingTool.readInput();
+            sortingTool.printSorted();
+        } else {
+            if (args.length >= 2){
+                if(args[1].equals("long")) sortingTool = new LongSortingTool();
+                if(args[1].equals("line")) sortingTool = new LineSortingTool();
+            }
+            sortingTool.readInput();
+            sortingTool.printMaxOccurrences();
         }
-        Menu menu = new Menu(dataType);
-        menu.readInput();
+
+//        Menu menu = new Menu(dataType);
+//        menu.readInput();
+
     }
 }
