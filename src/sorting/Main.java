@@ -17,9 +17,5 @@ public class Main {
             sortingTool.readInput();
             sortingTool.printMaxOccurrences();
         }
-
-//        Menu menu = new Menu(dataType);
-//        menu.readInput();
-
     }
 }

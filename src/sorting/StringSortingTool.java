@@ -9,7 +9,7 @@ public abstract class StringSortingTool implements SortingTool{
     List<String> longestStrings = new ArrayList<>();
     int longest = -1;
     int longestStringOccurrences = 0;
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     void processSingleInput(String string){
         if (string.length() == longest){
